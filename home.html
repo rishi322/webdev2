@@ -6,708 +6,441 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Irish Woolen Designer</title>
 
-    <!-- Simplified and optimized CSS -->
+    <!-- External CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.tailwindcss.com"></script>
+
     <style>
-        /* Base Styles */
+        /* Base styles */
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
             overflow-x: hidden;
-            color: #333;
+            min-width: 280px;
         }
 
-        /* Header with Video Background */
+        /* Header and video styles */
         header.relative {
             position: relative;
+            width: 100%;
             height: 100vh;
             overflow: hidden;
         }
 
-        video {
+        video.absolute {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
             min-width: 100%;
             min-height: 100%;
             width: auto;
             height: auto;
-            z-index: 0;
-            opacity: 0.5;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             object-fit: cover;
         }
 
-        /* Top Contact Bar - Responsive */
-        .top-contact-bar {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            padding: 0.5rem 1rem;
-            background-color: rgba(0, 0, 0, 0.5);
-            font-size: 0.8rem;
+        /* Mobile menu styles */
+        #mobile-menu {
+            backdrop-filter: blur(5px);
         }
 
-        .top-contact-bar a, 
-        .top-contact-bar span {
-            color: white;
-            text-decoration: none;
-            margin: 0.2rem 0.5rem;
-            white-space: nowrap;
-        }
-
-        /* Navigation - Responsive */
-        .main-nav {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem;
-            background-color: rgba(0, 0, 0, 0.3);
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-            margin-bottom: 0.5rem;
-        }
-
-        .logo-container img {
-            height: 2rem;
-            margin-right: 0.5rem;
-        }
-
-        .logo-container span {
-            color: white;
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-
-        .nav-links {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            margin: 0.5rem 0.8rem;
-            font-size: 0.9rem;
-            white-space: nowrap;
-        }
-
-        /* Hero Content - Responsive */
-        .hero-content {
-            position: relative;
-            padding: 2rem;
-            color: white;
-            max-width: 1200px;
-            margin: 0 auto;
-            height: calc(100vh - 120px);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-        }
-
-        .hero-content h2 {
-            font-size: 1rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .hero-content h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-
-        .hero-content p {
-            font-size: 1rem;
-            margin-bottom: 1rem;
-            line-height: 1.5;
-        }
-
-        .hero-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .hero-buttons a {
-            padding: 0.5rem 1rem;
-            border-radius: 0.25rem;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .btn-primary {
-            background-color: white;
-            color: #333;
-        }
-
-        .btn-primary:hover {
-            background-color: #f0f0f0;
-            transform: translateY(-2px);
-        }
-
-        .btn-outline {
-            border: 1px solid white;
-            color: white;
-        }
-
-        .btn-outline:hover {
-            background-color: rgba(255,255,255,0.1);
-            transform: translateY(-2px);
-        }
-
-        /* Main Content Sections */
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem 1rem;
-        }
-
-        /* About Section - Responsive */
-        .about-section {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .about-content {
-            order: 1;
-        }
-
-        .about-image {
-            order: 2;
-            display: flex;
-            justify-content: center;
-            margin-top: 2rem;
-        }
-
-        .about-image img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 0.5rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        /* Collections Section - Responsive */
-        .collections-section {
-            background-color: #f8f9fa;
-            padding: 3rem 1rem;
-            text-align: center;
-        }
-
-        .collections-section h1 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .collections-divider {
-            width: 4rem;
-            height: 0.25rem;
-            background-color: #6f42c1;
-            margin: 0 auto 2rem;
-        }
-
-        .collections-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-            padding: 0 1rem;
-        }
-
-        .collection-item {
-            background-color: white;
-            border-radius: 0.5rem;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .collection-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .collection-item img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* Stats Section - Responsive */
-        .stats-section {
-            display: flex;
-            flex-direction: column;
-            height: auto;
-        }
-
-        .stats-content {
-            width: 100%;
-            padding: 2rem;
-            order: 1;
-        }
-
-        .stats-image {
-            width: 100%;
-            height: 50vh;
-            order: 2;
-        }
-
-        .stats-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .stat-item {
-            background-color: #f8f9fa;
-            padding: 1rem;
-            border-radius: 0.5rem;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .stat-item:hover {
-            transform: scale(1.05);
-        }
-
-        .stat-item p:first-child {
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-            color: #6f42c1;
-        }
-
-        .stat-item p:last-child {
-            font-size: 0.8rem;
-            color: #6c757d;
-        }
-
-        /* Footer - Responsive */
-        footer {
-            background-color: #1a365d;
-            color: white;
-            padding: 2rem 1rem;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .footer-column h2 {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            position: relative;
-            padding-bottom: 0.5rem;
-        }
-
-        .footer-column h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 40px;
-            height: 2px;
-            background-color: #6f42c1;
-        }
-
-        .footer-column p, 
-        .footer-column a {
-            color: #a0aec0;
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-            display: block;
-            transition: color 0.3s ease;
-        }
-
-        .footer-column a:hover {
-            color: white;
-            text-decoration: none;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .social-links a {
-            color: white;
-            font-size: 1rem;
-            transition: transform 0.3s ease;
-        }
-
-        .social-links a:hover {
-            transform: translateY(-3px);
-        }
-
-        /* Responsive Adjustments */
-        @media (min-width: 640px) {
-            .hero-content h1 {
-                font-size: 3.5rem;
+        /* Extremely small device fixes */
+        @media (max-width: 320px) {
+            .text-6xl {
+                font-size: 1.75rem !important;
             }
 
-            .hero-content p {
-                font-size: 1.1rem;
+            .text-xl {
+                font-size: 0.875rem !important;
             }
 
-            .about-section {
-                flex-direction: row;
+            .text-lg {
+                font-size: 0.75rem !important;
             }
 
-            .about-content {
-                width: 66.66%;
-                order: 1;
-                padding-right: 2rem;
-            }
-
-            .about-image {
-                width: 33.33%;
-                order: 2;
-                margin-top: 0;
-                align-items: center;
-            }
-        }
-
-        @media (min-width: 768px) {
-            .top-contact-bar {
-                padding: 0.5rem 2rem;
-            }
-
-            .main-nav {
-                padding: 1rem 2rem;
+            .mt-8.space-x-4 > a {
+                display: block;
+                margin: 0.5rem 0 !important;
+                text-align: center;
+                max-width: 90%;
             }
 
             .hero-content {
-                padding: 2rem 4rem;
+                padding-left: 0.5rem !important;
+                padding-right: 0.5rem !important;
             }
 
-            .hero-content h1 {
-                font-size: 4rem;
+            .number-section {
+                flex-direction: column !important;
+                gap: 0.5rem !important;
             }
 
-            .stats-section {
-                flex-direction: row;
-                height: 60vh;
+            .number-box {
+                width: 100% !important;
+                margin-bottom: 0.5rem;
             }
 
-            .stats-content {
-                width: 50%;
-                order: 1;
+            nav .logo-text {
+                font-size: 1rem !important;
             }
 
-            .stats-image {
-                width: 50%;
-                height: auto;
-                order: 2;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .hero-content h1 {
-                font-size: 5rem;
+            .split-section {
+                flex-direction: column !important;
             }
 
-            .hero-content p {
-                font-size: 1.25rem;
+            .split-section > div {
+                width: 100% !important;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr !important;
             }
         }
 
+        /* Small device fixes */
         @media (max-width: 480px) {
-            .top-contact-bar {
-                justify-content: center;
-                text-align: center;
-            }
-
-            .top-contact-bar > div {
-                justify-content: center;
-            }
-
-            .nav-links {
-                justify-content: flex-start;
-            }
-
-            .hero-content {
-                padding: 1rem;
-                text-align: center;
-                align-items: center;
-            }
-
-            .hero-content h1 {
+            h1.text-6xl {
                 font-size: 2rem;
             }
 
-            .hero-buttons {
-                justify-content: center;
+            p.text-xl, p.text-lg {
+                font-size: 0.875rem;
+            }
+
+            .hero-content {
+                padding-left: 1rem !important;
+            }
+
+            .mt-8.space-x-4 {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+
+            .mt-8.space-x-4 > a {
+                margin: 0.25rem 0;
+            }
+
+            .split-section {
+                flex-direction: column;
+            }
+
+            .split-section > div {
                 width: 100%;
             }
 
-            .hero-buttons a {
-                width: 100%;
-                text-align: center;
+            .hidden-xs {
+                display: none !important;
             }
         }
+        .logo-container {
+      display: flex;
+      align-items: center;
+ 
+    }
+    
+    .logo-img {
+      height: 100px; /* Adjust this value to make your logo bigger or smaller */
+      width: auto;
+      max-width: 300px; /* Prevents logo from getting too wide */
+    }
     </style>
-
-    <!-- External Resources -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <!-- Header with Video Background -->
-    <header class="relative">
-        <video alt="Close-up of hands knitting with green yarn" playsinline autoplay muted loop>
+    <header class="relative"  style="background-color:rgb(0, 0, 0)">
+        <!-- Video background -->
+        <video class="absolute inset-0 w-full h-full object-cover opacity-40" playsinline autoplay muted loop>
             <source src="./imgs/video.mp4" type="video/mp4">
-            Your browser does not support HTML5 video.
+            Your browser does not support the video tag.
         </video>
         
-        <!-- Top Contact Bar -->
-        <div class="top-contact-bar">
-            <div>
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <span>|</span>
-                <span>0894342831</span>
-                <span>|</span>
-                <span>rishipatel1850@gmail.com</span>
-            </div>
-            <div>
-                <a href="#">Login</a>
-                <a href="#">Sign up</a>
-                <div class="inline-block">
-                    <button class="text-white">English <i class="fas fa-chevron-down"></i></button>
+        <div class="relative z-10">
+            <!-- Top contact bar - hidden on small screens -->
+            <div class="hidden md:flex justify-between items-center p-4 bg-transparent">
+                <div class="flex items-center space-x-4">
+                    <a class="text-white" href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a class="text-white" href="#"><i class="fab fa-twitter"></i></a>
+                    <a class="text-white" href="#"><i class="fab fa-instagram"></i></a>
+                    <span class="text-white">|</span>
+                    <span class="text-white">0894342831</span>
+                    <span class="text-white">|</span>
+                    <span class="text-white">rishipatel1850@gmail.com</span>
                 </div>
-                <div class="inline-block">
-                    <button class="text-white">USD <i class="fas fa-chevron-down"></i></button>
+                <div class="flex items-center space-x-4">
+                    <a class="text-white" href="#">Login</a>
+                    <a class="text-white" href="#">Sign up</a>
+                    <div class="relative">
+                        <button class="text-white">English <i class="fas fa-chevron-down"></i></button>
+                    </div>
+                    <div class="relative">
+                        <button class="text-white">USD <i class="fas fa-chevron-down"></i></button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Responsive Navbar -->
+            <nav class="flex justify-between items-center p-4 bg-transparent" style="margin-top:-3rem;">
+                <div class="flex items-center space-x-2">
+                   
+                        <!-- Replace the src with the path to your logo image -->
+                        <img src="./imgs/logo4.png" alt="Athen Luxe Logo" class="logo-img">
+                   
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a class="text-white hover:text-gray-300 transition" href="index.html">Home</a>
+                    <div class="relative">
+                        <button class="text-white hover:text-gray-300 transition">Collections <i class="fas fa-chevron-down"></i></button>
+                    </div>
+                    <a class="text-white hover:text-gray-300 transition" href="shop.html">Shop</a>
+                    <a class="text-white hover:text-gray-300 transition" href="events.html">Events & Awards</a>
+                    <a class="text-white hover:text-gray-300 transition" href="news.html">News</a>
+                    <a class="text-white hover:text-gray-300 transition" href="about.html">About Us</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h.01M12 12h.01M19 12h.01"></path>
+                    </svg>
+                </button>
+            </nav>
+            
+            <!-- Mobile Menu (hidden by default) -->
+            <div id="mobile-menu" class="hidden md:hidden bg-black bg-opacity-90 absolute w-full z-20">
+                <div class="px-4 py-2 space-y-2">
+                    <a class="block text-white py-2 hover:bg-gray-800 px-4 rounded" href="#">Home</a>
+                    <a class="block text-white py-2 hover:bg-gray-800 px-4 rounded" href="#">Collections</a>
+                    <a class="block text-white py-2 hover:bg-gray-800 px-4 rounded" href="#">Shop</a>
+                    <a class="block text-white py-2 hover:bg-gray-800 px-4 rounded" href="#">Events & Awards</a>
+                    <a class="block text-white py-2 hover:bg-gray-800 px-4 rounded" href="#">News</a>
+                    <a class="block text-white py-2 hover:bg-gray-800 px-4 rounded" href="#">About Us</a>
                 </div>
             </div>
         </div>
         
-        <!-- Navigation -->
-        <nav class="main-nav">
-            <div class="logo-container">
-                <img alt="Athen Luxe Logo" src="./imgs/logo.png">
-                <span>ATHEN LUXE</span>
-            </div>
-            <div class="nav-links">
-                <a href="#">Home</a>
-                <a href="#">Collections <i class="fas fa-chevron-down"></i></a>
-                <a href="#">Shop</a>
-                <a href="#">Events & Awards</a>
-                <a href="#">News</a>
-                <a href="#">About Us</a>
-            </div>
-        </nav>
-        
         <!-- Hero Content -->
-        <div class="hero-content">
-            <h2 class="font-semibold">BEST IN DESIGN</h2>
-            <h1 class="font-bold">CREATE & INSPIRE</h1>
-            <p>Step into the world of fashion with us!</p>
-            <p>Unleash your creativity with unique designs, trendsetting styles, and timeless elegance.</p>
-            <div class="hero-buttons">
-                <a href="#" class="btn-primary">Discover</a>
-                <a href="#" class="btn-outline">Know more</a>
+        <div class="relative z-10 flex flex-col items-start justify-center h-screen text-left px-4 sm:pl-16 hero-content" style="color:white;">
+            <h2 class="text-sm sm:text-lg font-semibold">BEST IN DESIGN</h2>
+            <h1 class="text-3xl sm:text-4xl md:text-6xl font-bold mb-2 md:mb-4 leading-tight" >CREATE & INSPIRE</h1>
+            <p class="text-base sm:text-xl mt-2 md:mt-4">Step into the world of fashion with us!</p>
+            <p class="text-sm sm:text-base md:text-lg mt-1 md:mt-2 max-w-full">
+                Unleash your creativity with unique designs, trendsetting styles, and timeless elegance.
+                From haute couture to ready-to-wear, redefine fashion with innovation and artistry.
+            </p>
+            <div class="mt-4 sm:mt-8 flex flex-col sm:flex-row gap-2 sm:gap-0 sm:space-x-4 w-full sm:w-auto">
+                <a class="bg-white text-gray-900 px-4 py-2 rounded hover:bg-gray-100 transition text-center sm:text-left" href="#">Discover</a>
+                <a class="border border-white text-white px-4 py-2 rounded hover:bg-white hover:text-gray-900 transition text-center sm:text-left" href="#">Know more</a>
             </div>
         </div>
     </header>
-
+    
     <!-- Main Content -->
-    <main>
-        <!-- About Section -->
-        <section class="container about-section">
-            <div class="about-content">
-                <h1 class="text-3xl font-bold mb-4">Discover the Artist behind the art</h1>
-                <p class="mb-6">
-                    Angelina is an inspiring fashion designer whose passion for creativity and authenticity shines through in
-                    every creation. A dedicated and honest individual, Angelina's deep connection with nature influences her
-                    unique, vibrant, and adventurous designs.
-                </p>
-                <div class="mb-6">
-                    <h2 class="text-2xl font-bold mb-2">1</h2>
-                    <p>
+    <div class="container mx-auto p-4 sm:p-6">
+        <h1 class="text-2xl sm:text-3xl font-bold mb-2 sm:mb-4">Discover the Artist behind the art</h1>
+        <p class="text-gray-700 mb-4 sm:mb-6 text-sm sm:text-base">
+            Angelina is an inspiring fashion designer whose passion for creativity and authenticity shines through in
+            every creation. A dedicated and honest individual, Angelina's deep connection with nature influences her
+            unique, vibrant, and adventurous designs.
+        </p>
+        <div class="flex flex-col md:flex-row">
+            <div class="md:w-2/3">
+                <div class="mb-4 sm:mb-6">
+                    <h2 class="text-xl sm:text-2xl font-bold mb-1 sm:mb-2">1</h2>
+                    <p class="text-gray-700 text-sm sm:text-base">
                         From her earliest years, Angelina knew she was destined for fashion design. Her childhood was
                         marked by an unmistakable passion for creativity, frequently expressed through imaginative
                         sketches and experiments with fabrics. Angelina's early curiosity soon turned into a lifelong
                         dedication, especially evident in her fascination with knitting and woolen clothing design.
                     </p>
                 </div>
-                <div class="mb-6">
-                    <h2 class="text-2xl font-bold mb-2">2</h2>
-                    <p>
+                <div class="mb-4 sm:mb-6">
+                    <h2 class="text-xl sm:text-2xl font-bold mb-1 sm:mb-2">2</h2>
+                    <p class="text-gray-700 text-sm sm:text-base">
                         Choosing to learn everything from scratch, Angelina embraced traditional techniques that she
                         believes lend authenticity and depth to her collections. Her commitment to traditional
                         craftsmanship not only preserves rich cultural heritage but also ensures each piece tells a
                         meaningful story.
                     </p>
                 </div>
-                <div>
-                    <h2 class="text-2xl font-bold mb-2">3</h2>
-                    <p>
+                <div class="mb-4 sm:mb-0">
+                    <h2 class="text-xl sm:text-2xl font-bold mb-1 sm:mb-2">3</h2>
+                    <p class="text-gray-700 text-sm sm:text-base">
                         Angelina's adventurous spirit and colorful personality are reflected vividly in her collections,
                         making her designs resonate deeply with those who value originality, craftsmanship, and an
                         authentic connection to nature.
                     </p>
                 </div>
             </div>
-            <div class="about-image">
-                <img src="../imgs/vector1.jpg"
-                    alt="Illustration of a woman knitting with a large ball of yarn and a heart symbol above her head">
+            <div class="md:w-1/3 flex justify-center items-center mt-4 md:mt-0">
+                <img src="./imgs/vector1.jpg"
+                    alt="Illustration of a woman knitting with a large ball of yarn and a heart symbol above her head"
+                    class="w-full max-w-xs h-auto" />
             </div>
-        </section>
+        </div>
+    </div>
 
-        <!-- Collections Section -->
-        <section class="collections-section">
-            <h1>Explore most elegant Collections</h1>
-            <div class="collections-divider"></div>
-            <div class="collections-grid">
-                <div class="collection-item">
-                    <img src="https://placehold.co/600x600" alt="Collection of knitted sweaters in various colors">
+    <!-- Collections Section -->
+    <div class="bg-blue-50 py-8 sm:py-12">
+        <div class="container mx-auto text-center px-4">
+            <h1 class="text-2xl sm:text-3xl font-bold mb-2 sm:mb-4">Explore most elegant Collections</h1>
+            <hr class="border-t-2 border-purple-600 w-24 mx-auto mb-4 sm:mb-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 gallery-grid">
+                <div class="p-2 sm:p-4">
+                    <img src="./imgs/p2.jpeg" alt="Collection of knitted sweaters in various colors"
+                        class="rounded-lg shadow-md w-full h-auto">
                 </div>
-                <div class="collection-item">
-                    <img src="https://placehold.co/600x600" alt="Man wearing a black knitted hat">
+                <div class="p-2 sm:p-4">
+                    <img src="./imgs/p3.jpeg" alt="Man wearing a black knitted hat"
+                        class="rounded-lg shadow-md w-full h-auto">
                 </div>
-                <div class="collection-item">
-                    <img src="https://placehold.co/600x600" alt="Woman wearing a green knitted hat in a snowy landscape">
+                <div class="p-2 sm:p-4">
+                    <img src="./imgs/p4.jpeg"
+                        alt="Woman wearing a green knitted hat in a snowy landscape" 
+                        class="rounded-lg shadow-md w-full h-auto">
                 </div>
             </div>
-        </section>
+        </div>
+    </div>
 
-        <!-- Stats Section -->
-        <section class="stats-section">
-            <div class="stats-content">
-                <p class="mb-2">Our Fashion and awards</p>
-                <h1 class="text-3xl md:text-5xl font-bold mb-4 leading-tight">
-                    Celebrate fashion and witness the elegance of global trends
-                </h1>
-                <p class="mb-6 leading-relaxed">
-                    Stay ahead in the world of fashion with the latest events, runway shows, and award ceremonies.
-                    Experience the creativity of top designers and the glamour of the industry's biggest celebrations.
-                </p>
+    <!-- Fashion and Awards Section -->
+    <section class="relative w-full py-8 md:py-0 md:h-[80vh] bg-white flex flex-col md:flex-row items-center split-section">
+        <!-- Left Content Section -->
+        <div class="w-full md:w-1/2 p-4 md:p-12 lg:p-16">
+            <p class="text-black text-sm sm:text-lg mb-1 sm:mb-2">Our Fashion and awards</p>
+            <h1 class="text-xl sm:text-3xl md:text-5xl font-bold mb-2 sm:mb-4 leading-tight text-black">
+                Celebrate fashion and witness the elegance of global trends
+            </h1>
+            <p class="text-sm sm:text-lg md:text-xl mb-4 sm:mb-6 leading-relaxed text-black">
+                Stay ahead in the world of fashion with the latest events, runway shows, and award ceremonies.
+                Experience the creativity of top designers and the glamour of the industry's biggest celebrations.
+            </p>
 
-                <!-- Stats Grid -->
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <p>5K+</p>
-                        <p>Fashion Designers</p>
+            <!-- Number Sections -->
+            <div class="flex flex-wrap justify-start gap-2 sm:gap-6 number-section">
+                <div class="bg-gray-100 text-black px-3 sm:px-6 py-2 sm:py-4 rounded-lg text-center w-28 sm:w-32 md:w-36 number-box">
+                    <p class="text-xl sm:text-3xl font-bold">5K+</p>
+                    <p class="text-black text-xs sm:text-sm">Fashion Designers</p>
+                </div>
+                <div class="bg-gray-100 text-black px-3 sm:px-6 py-2 sm:py-4 rounded-lg text-center w-28 sm:w-32 md:w-36 number-box">
+                    <p class="text-xl sm:text-3xl font-bold">200+</p>
+                    <p class="text-black text-xs sm:text-sm">Prestigious Awards</p>
+                </div>
+                <div class="bg-gray-100 text-black px-3 sm:px-6 py-2 sm:py-4 rounded-lg text-center w-28 sm:w-32 md:w-36 number-box">
+                    <p class="text-xl sm:text-3xl font-bold">100%</p>
+                    <p class="text-black text-xs sm:text-sm">Style & Elegance</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Image Section -->
+        <div class="w-full md:w-1/2 h-64 md:h-full mt-4 md:mt-0">
+            <img src="./imgs/aran 2.jpg" alt="A man and a woman in fashionable clothing standing on a rocky beach"
+                class="w-full h-full object-cover">
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="py-4">
+        <!-- Gallery content would go here -->
+        <div class="bg-blue-50 py-8 sm:py-12">
+            <div class="container mx-auto text-center px-4">
+                <h1 class="text-2xl sm:text-3xl font-bold mb-2 sm:mb-4">Gallery</h1>
+                <hr class="border-t-2 border-purple-600 w-24 mx-auto mb-4 sm:mb-8">
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 gallery-grid">
+                    <div class="p-2 sm:p-4">
+                        <img src="./imgs/p2.jpeg" alt="Collection of knitted sweaters in various colors"
+                            class="rounded-lg shadow-md w-full h-auto">
                     </div>
-                    <div class="stat-item">
-                        <p>200+</p>
-                        <p>Prestigious Awards</p>
+                    <div class="p-2 sm:p-4">
+                        <img src="./imgs/p3.jpeg" alt="Man wearing a black knitted hat"
+                            class="rounded-lg shadow-md w-full h-auto">
                     </div>
-                    <div class="stat-item">
-                        <p>100%</p>
-                        <p>Style & Elegance</p>
+                    <div class="p-2 sm:p-4">
+                        <img src="./imgs/p4.jpeg"
+                            alt="Woman wearing a green knitted hat in a snowy landscape" 
+                            class="rounded-lg shadow-md w-full h-auto">
                     </div>
                 </div>
             </div>
-            <div class="stats-image">
-                <img src="./imgs/aran 2.jpg" alt="A man and a woman in fashionable clothing standing on a rocky beach">
-            </div>
-        </section>
-
-        <!-- Gallery Section (Placeholder) -->
-        <section class="container">
-            <h2 class="text-3xl font-bold text-center mb-8">Gallery</h2>
-            <div class="collections-grid">
-                <div class="collection-item">
-                    <img src="https://placehold.co/600x600" alt="Fashion design 1">
-                </div>
-                <div class="collection-item">
-                    <img src="https://placehold.co/600x600" alt="Fashion design 2">
-                </div>
-                <div class="collection-item">
-                    <img src="https://placehold.co/600x600" alt="Fashion design 3">
-                </div>
-                <div class="collection-item">
-                    <img src="https://placehold.co/600x600" alt="Fashion design 4">
-                </div>
-            </div>
-        </section>
-    </main>
-
+        </div>
+    </section>
+    
     <!-- Footer -->
-    <footer>
-        <div class="footer-grid">
-            <div class="footer-column">
-                <h2>Need any help?</h2>
-                <p>Call 24/7 for any help</p>
-                <p class="font-bold mb-4">+353 894342831</p>
-                <p>Mail to our support team</p>
-                <p class="font-bold mb-4">rishipatel1850@gmail.com</p>
-                <p>Follow us on</p>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    <footer class="bg-blue-400 py-6 sm:py-8 px-4" style="color:white;">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
+            <div class="mb-4 sm:mb-0">
+                <h2 class="font-bold mb-2 sm:mb-4 text-base sm:text-lg">Need any help?</h2>
+                <p class="text-sm">Call 24/7 for any help</p>
+                <p class="text-white-600 text-base sm:text-lg font-bold mb-2 sm:mb-4">+353 894342831</p>
+                <p class="text-sm">Mail to our support team</p>
+                <p class="text-white-600 text-base sm:text-lg font-bold mb-2 sm:mb-4">rishipatel1850@gmail.com</p>
+                <p class="text-sm">Follow us on</p>
+                <div class="flex space-x-4 mt-2">
+                    <a href="#" class="text-white-600"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-white-600"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-white-600"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-white-600"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
-            <div class="footer-column">
-                <h2>Company</h2>
-                <a href="#">About Us</a>
-                <a href="#">Testimonials</a>
-                <a href="#">Work with Us</a>
-                <a href="#">Meet the Team</a>
-                <a href="#">Blog</a>
+            <div class="mb-4 sm:mb-0">
+                <h2 class="font-bold mb-2 sm:mb-4 text-base sm:text-lg">Company</h2>
+                <ul class="text-sm">
+                    <li class="mb-1 sm:mb-2"><a href="#" class="hover:underline">About Us</a></li>
+                    <li class="mb-1 sm:mb-2"><a href="#" class="hover:underline">Testimonials</a></li>
+                    <li class="mb-1 sm:mb-2"><a href="#" class="hover:underline">Work with Us</a></li>
+                    <li class="mb-1 sm:mb-2"><a href="#" class="hover:underline">Meet the Team</a></li>
+                    <li class="mb-1 sm:mb-2"><a href="#" class="hover:underline">Blog</a></li>
+                </ul>
             </div>
-            <div class="footer-column">
-                <h2>Support</h2>
-                <a href="#">Account</a>
-                <a href="#">Faq</a>
-                <a href="#">Contact</a>
-                <a href="#">Privacy Policy</a>
+            <div class="mb-4 sm:mb-0">
+                <h2 class="font-bold mb-2 sm:mb-4 text-base sm:text-lg">Support</h2>
+                <ul class="text-sm">
+                    <li class="mb-1 sm:mb-2"><a href="#" class="hover:underline">Account</a></li>
+                    <li class="mb-1 sm:mb-2"><a href="#" class="hover:underline">Faq</a></li>
+                    <li class="mb-1 sm:mb-2"><a href="#" class="hover:underline">Contact</a></li>
+                    <li class="mb-1 sm:mb-2"><a href="#" class="hover:underline">Privacy Policy</a></li>
+                </ul>
             </div>
-            <div class="footer-column">
-                <h2>Other Services</h2>
-                <a href="#">Fashion Events</a>
-                <a href="#">Partners</a>
+            <div>
+                <h2 class="font-bold mb-2 sm:mb-4 text-base sm:text-lg">Other Services</h2>
+                <ul class="text-sm">
+                    <li class="mb-1 sm:mb-2"><a href="#" class="hover:underline">Fashion Events</a></li>
+                    <li class="mb-1 sm:mb-2"><a href="#" class="hover:underline">Partners</a></li>
+                </ul>
             </div>
         </div>
     </footer>
 
     <!-- Scripts -->
     <script>
-        // Intersection Observer for animations
-        document.addEventListener('DOMContentLoaded', function() {
-            const sections = document.querySelectorAll('.about-section, .collections-section, .stats-section, .hero-content');
+        // Mobile menu toggle functionality
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const menu = document.getElementById('mobile-menu');
+            const button = document.getElementById('mobile-menu-button');
             
-            const observerOptions = {
-                root: null,
-                threshold: 0.1,
-                rootMargin: "0px"
-            };
-
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('animate-fadeIn');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, observerOptions);
-
-            sections.forEach(section => {
-                observer.observe(section);
-            });
+            if (!menu.contains(event.target) && !button.contains(event.target)) {
+                menu.classList.add('hidden');
+            }
         });
     </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
