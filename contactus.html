@@ -176,9 +176,10 @@
         
        
         
-        <div class="relative z-10" style="background-color:rgba(0, 0, 0, 0.573)">
+       
+        <div class="relative z-10">
             <!-- Top contact bar - hidden on small screens -->
-            <div class="hidden md:flex justify-between items-center p-4 bg-transparent">
+            <div class="hidden md:flex justify-between items-center p-4 bg-black">
                 <div class="flex items-center space-x-4">
                     <a class="text-white" href="#"><i class="fab fa-facebook-f"></i></a>
                     <a class="text-white" href="#"><i class="fab fa-twitter"></i></a>
@@ -201,7 +202,7 @@
             </div>
             
             <!-- Responsive Navbar -->
-            <nav class="flex justify-between items-center p-4 bg-transparent" style="margin-top:-3rem;">
+            <nav class="flex justify-between items-center p-4 bg-black" style="margin-top:-3rem;">
                 <div class="flex items-center space-x-2">
                    
                         <!-- Replace the src with the path to your logo image -->
@@ -212,17 +213,21 @@
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex items-center space-x-4">
                     <a class="text-white hover:text-gray-300 transition" href="index.html">Home</a>
+                    <a class="text-white hover:text-gray-300 transition" href="index.html#about">About Me</a>
                     <div class="relative">
-                        <button class="text-white hover:text-gray-300 transition">Collections <i class="fas fa-chevron-down"></i></button>
+                        <button class="text-white hover:text-gray-300 transition"> <a class="text-white hover:text-gray-300 transition" href="index.html#collections">Collections</a> </button>
                     </div>
+                    
+                    
+                    <a class="text-white hover:text-gray-300 transition" href="index.html#event">Events & Awards</a>
+                    <a class="text-white hover:text-gray-300 transition" href="index.html#gallery">Gallery</a>
+                    
                     <a class="text-white hover:text-gray-300 transition" href="shop.html">Shop</a>
-                    <a class="text-white hover:text-gray-300 transition" href="events.html">Events & Awards</a>
-                    <a class="text-white hover:text-gray-300 transition" href="news.html">News</a>
-                    <a class="text-white hover:text-gray-300 transition" href="contactus.html">Contact Us</a>
+                    <a class="text-white hover:text-gray-300 transition" href="contactus.html" style=" border-bottom:1px solid white;">Contact Us</a>
                 </div>
                 
                 <!-- Mobile Menu Button -->
-                <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none" >
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h.01M12 12h.01M19 12h.01"></path>
                     </svg>
@@ -233,11 +238,15 @@
             <div id="mobile-menu" class="hidden md:hidden bg-black bg-opacity-90 absolute w-full z-20">
                 <div class="px-4 py-2 space-y-2">
                     <a class="block text-white py-2 hover:bg-gray-800 px-4 rounded" href="index.html">Home</a>
-                    <a class="block text-white py-2 hover:bg-gray-800 px-4 rounded" href="#">Collections</a>
+                    
+                    <a class="block text-white py-2 hover:bg-gray-800 px-4 rounded" href="index.html#about">About Me</a>
+                    <a class="block text-white py-2 hover:bg-gray-800 px-4 rounded" href="index.html#collections">Collections</a>
+                    
+                    <a class="block text-white py-2 hover:bg-gray-800 px-4 rounded" href="#event">Events & Awards</a>
+                    <a class="block text-white py-2 hover:bg-gray-800 px-4 rounded" href="index.html#gallery">Gallery</a>
+                    
                     <a class="block text-white py-2 hover:bg-gray-800 px-4 rounded" href="shop.html">Shop</a>
-                    <a class="block text-white py-2 hover:bg-gray-800 px-4 rounded" href="#">Events & Awards</a>
-                    <a class="block text-white py-2 hover:bg-gray-800 px-4 rounded" href="#">News</a>
-                    <a class="block text-white py-2 hover:bg-gray-800 px-4 rounded" href="contactus.html">Contact Us</a>
+                    <a class="block text-white py-2 hover:bg-gray-800 px-4 rounded" href="contactus.html"  style=" border-bottom:1px solid white;">Contact Us</a>
                 </div>
             </div>
         </div>

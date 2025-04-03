@@ -11,152 +11,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.tailwindcss.com"></script>
+   
+  <!-- Tailwind CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
-    <style>
-        /* Base styles */
-        body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-            min-width: 280px;
-        }
 
-        /* Header and video styles */
-        header.relative {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            overflow: hidden;
-        }
-
-        video.absolute {
-            position: absolute;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            object-fit: cover;
-        }
-
-        /* Mobile menu styles */
-        #mobile-menu {
-            backdrop-filter: blur(5px);
-        }
-
-        /* Extremely small device fixes */
-        @media (max-width: 320px) {
-            .text-6xl {
-                font-size: 1.75rem !important;
-            }
-
-            .text-xl {
-                font-size: 0.875rem !important;
-            }
-
-            .text-lg {
-                font-size: 0.75rem !important;
-            }
-
-            .mt-8.space-x-4 > a {
-                display: block;
-                margin: 0.5rem 0 !important;
-                text-align: center;
-                max-width: 90%;
-            }
-
-            .hero-content {
-                padding-left: 0.5rem !important;
-                padding-right: 0.5rem !important;
-            }
-
-            .number-section {
-                flex-direction: column !important;
-                gap: 0.5rem !important;
-            }
-
-            .number-box {
-                width: 100% !important;
-                margin-bottom: 0.5rem;
-            }
-
-            nav .logo-text {
-                font-size: 1rem !important;
-            }
-
-            .split-section {
-                flex-direction: column !important;
-            }
-
-            .split-section > div {
-                width: 100% !important;
-            }
-
-            .gallery-grid {
-                grid-template-columns: 1fr !important;
-            }
-        }
-
-        /* Small device fixes */
-        @media (max-width: 480px) {
-            h1.text-6xl {
-                font-size: 2rem;
-            }
-
-            p.text-xl, p.text-lg {
-                font-size: 0.875rem;
-            }
-
-            .hero-content {
-                padding-left: 1rem !important;
-            }
-
-            .mt-8.space-x-4 {
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0.5rem;
-            }
-
-            .mt-8.space-x-4 > a {
-                margin: 0.25rem 0;
-            }
-
-            .split-section {
-                flex-direction: column;
-            }
-
-            .split-section > div {
-                width: 100%;
-            }
-
-            .hidden-xs {
-                display: none !important;
-            }
-        }
-        .logo-container {
-      display: flex;
-      align-items: center;
- 
-    }
-    
-    .logo-img {
-      height: 100px; /* Adjust this value to make your logo bigger or smaller */
-      width: auto;
-      max-width: 300px; /* Prevents logo from getting too wide */
-    }
-    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-DQvkBjpPgn7RC31MCQoOeC9TI2kdqa4+BSgNMNj8v77fdC77Kj5zpWFTJaaAoMbC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js" integrity="sha384-YUe2LzesAfftltw+PEaao2tjU/QATaW/rOitAq67e0CT0Zi2VVRL0oC4+gAaeBKu" crossorigin="anonymous"></script>
+    <link href="styles.css" rel="stylesheet"/>
 </head>
-
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.min.js" integrity="sha384-Re460s1NeyAhufAM5JwfIGWosokaQ7CH15ti6W5Y4wC/m4eJ5opJ2ivohxVM05Wd" crossorigin="anonymous"></script>
 <body>
     <header class="relative"  style="background-color:rgb(0, 0, 0)">
         <!-- Video background -->
         <video class="absolute inset-0 w-full h-full object-cover opacity-40" playsinline autoplay muted loop>
-            <source src="./imgs/video.mp4" type="video/mp4">
+            <source src="./imgs/bg.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         
@@ -195,18 +65,22 @@
                 
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex items-center space-x-4">
-                    <a class="text-white hover:text-gray-300 transition" href="index.html">Home</a>
+                    <a class="text-white hover:text-gray-300 transition" href="index.html"  style=" border-bottom:1px solid white;">Home</a>
+                    <a class="text-white hover:text-gray-300 transition" href="#about">About Me</a>
                     <div class="relative">
-                        <button class="text-white hover:text-gray-300 transition">Collections <i class="fas fa-chevron-down"></i></button>
+                        <button class="text-white hover:text-gray-300 transition"> <a class="text-white hover:text-gray-300 transition" href="#collections">Collections</a> </button>
                     </div>
+                    
+                    
+                    <a class="text-white hover:text-gray-300 transition" href="#event">Events & Awards</a>
+                    <a class="text-white hover:text-gray-300 transition" href="#gallery">Gallery</a>
+                    
                     <a class="text-white hover:text-gray-300 transition" href="shop.html">Shop</a>
-                    <a class="text-white hover:text-gray-300 transition" href="events.html">Events & Awards</a>
-                    <a class="text-white hover:text-gray-300 transition" href="news.html">News</a>
                     <a class="text-white hover:text-gray-300 transition" href="contactus.html">Contact Us</a>
                 </div>
                 
                 <!-- Mobile Menu Button -->
-                <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none" >
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h.01M12 12h.01M19 12h.01"></path>
                     </svg>
@@ -216,11 +90,15 @@
             <!-- Mobile Menu (hidden by default) -->
             <div id="mobile-menu" class="hidden md:hidden bg-black bg-opacity-90 absolute w-full z-20">
                 <div class="px-4 py-2 space-y-2">
-                    <a class="block text-white py-2 hover:bg-gray-800 px-4 rounded" href="index.html">Home</a>
-                    <a class="block text-white py-2 hover:bg-gray-800 px-4 rounded" href="#">Collections</a>
+                    <a class="block text-white py-2 hover:bg-gray-800 px-4 rounded" href="index.html"  style=" border-bottom:1px solid white;">Home</a>
+                    
+                    <a class="block text-white py-2 hover:bg-gray-800 px-4 rounded" href="#about">About Me</a>
+                    <a class="block text-white py-2 hover:bg-gray-800 px-4 rounded" href="#collections">Collections</a>
+                    
+                    <a class="block text-white py-2 hover:bg-gray-800 px-4 rounded" href="#event">Events & Awards</a>
+                    <a class="block text-white py-2 hover:bg-gray-800 px-4 rounded" href="#Gallery">Gallery</a>
+                    
                     <a class="block text-white py-2 hover:bg-gray-800 px-4 rounded" href="shop.html">Shop</a>
-                    <a class="block text-white py-2 hover:bg-gray-800 px-4 rounded" href="#">Events & Awards</a>
-                    <a class="block text-white py-2 hover:bg-gray-800 px-4 rounded" href="#">News</a>
                     <a class="block text-white py-2 hover:bg-gray-800 px-4 rounded" href="contactus.html">Contact Us</a>
                 </div>
             </div>
@@ -236,14 +114,15 @@
                 From haute couture to ready-to-wear, redefine fashion with innovation and artistry.
             </p>
             <div class="mt-4 sm:mt-8 flex flex-col sm:flex-row gap-2 sm:gap-0 sm:space-x-4 w-full sm:w-auto">
-                <a class="bg-white text-gray-900 px-4 py-2 rounded hover:bg-gray-100 transition text-center sm:text-left" href="#">Discover</a>
-                <a class="border border-white text-white px-4 py-2 rounded hover:bg-white hover:text-gray-900 transition text-center sm:text-left" href="#">Know more</a>
+                <a class="bg-white text-gray-900 px-4 py-2 rounded hover:bg-gray-100 transition text-center sm:text-left" href="#about">Discover</a>
+                <a class="border border-white text-white px-4 py-2 rounded hover:bg-white hover:text-black-600 transition text-center sm:text-left" href="shop.html">Shop Now</a>
             </div>
         </div>
     </header>
     
+    
     <!-- Main Content -->
-    <div class="container mx-auto p-4 sm:p-6">
+    <div class="container mx-auto p-4 sm:p-6" id="about">
         <h1 class="text-2xl sm:text-3xl font-bold mb-2 sm:mb-4">Discover the Artist behind the art</h1>
         <p class="text-gray-700 mb-4 sm:mb-6 text-sm sm:text-base">
             Angelina is an inspiring fashion designer whose passion for creativity and authenticity shines through in
@@ -288,30 +167,42 @@
     </div>
 
     <!-- Collections Section -->
-    <div class="bg-blue-50 py-8 sm:py-12">
+    <div class="bg-blue-50 py-8 sm:py-12" id="collections">
         <div class="container mx-auto text-center px-4">
             <h1 class="text-2xl sm:text-3xl font-bold mb-2 sm:mb-4">Explore most elegant Collections</h1>
             <hr class="border-t-2 border-purple-600 w-24 mx-auto mb-4 sm:mb-8">
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 gallery-grid">
-                <div class="p-2 sm:p-4">
-                    <img src="./imgs/p2.jpeg" alt="Collection of knitted sweaters in various colors"
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 gallery-grid " >
+                <div class="p-2 sm:p-4 " id="thover">
+
+                    
+                    <h2 class="absolute py-12 px-6 h2 flex flex-col items-start justify-center h-screen text-left px-4 sm:pl-16 hero-content" id="x" >Women</h2> 
+                    <img src="./imgs/p2.jpeg" class="phover" alt="Collection of knitted sweaters in various colors"
                         class="rounded-lg shadow-md w-full h-auto">
+                       
                 </div>
-                <div class="p-2 sm:p-4">
-                    <img src="./imgs/p3.jpeg" alt="Man wearing a black knitted hat"
+                <div class="p-2 sm:p-4 phover" id="thover" >
+                    
+                    <h2 class="absolute py-12 px-6 h2 flex flex-col items-start justify-center h-screen text-left px-4 sm:pl-16 hero-content" id="x" >Kids</h2> 
+                   
+                    <img src="./imgs/p3.jpeg"  alt="Man wearing a black knitted hat"
                         class="rounded-lg shadow-md w-full h-auto">
+                  
                 </div>
-                <div class="p-2 sm:p-4">
-                    <img src="./imgs/p4.jpeg"
+                <div class="p-2 sm:p-4" id="thover">
+                    
+                    <h2 class="absolute py-12 px-6 h2 flex flex-col items-start justify-center h-screen text-left px-4 sm:pl-16 hero-content" id="x" >Men</h2> 
+                   
+                    <img src="./imgs/p6.jpg" class="phover"
                         alt="Woman wearing a green knitted hat in a snowy landscape" 
                         class="rounded-lg shadow-md w-full h-auto">
+                        
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Fashion and Awards Section -->
-    <section class="relative w-full py-8 md:py-0 md:h-[80vh] bg-white flex flex-col md:flex-row items-center split-section">
+    <section class="relative w-full py-8 md:py-0 md:h-[80vh] bg-white flex flex-col md:flex-row items-center split-section" id="event">
         <!-- Left Content Section -->
         <div class="w-full md:w-1/2 p-4 md:p-12 lg:p-16">
             <p class="text-black text-sm sm:text-lg mb-1 sm:mb-2">Our Fashion and awards</p>
@@ -348,7 +239,7 @@
     </section>
 
     <!-- Gallery Section -->
-    <section class="py-4">
+    <section class="py-4" id="gallery">
         <!-- Gallery content would go here -->
         <div class="bg-blue-50 py-8 sm:py-12">
             <div class="container mx-auto text-center px-4">
@@ -356,15 +247,15 @@
                 <hr class="border-t-2 border-purple-600 w-24 mx-auto mb-4 sm:mb-8">
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 gallery-grid">
                     <div class="p-2 sm:p-4">
-                        <img src="./imgs/p2.jpeg" alt="Collection of knitted sweaters in various colors"
+                        <img src="./imgs/tk.jpg" alt="Collection of knitted sweaters in various colors"
                             class="rounded-lg shadow-md w-full h-auto">
                     </div>
                     <div class="p-2 sm:p-4">
-                        <img src="./imgs/p3.jpeg" alt="Man wearing a black knitted hat"
+                        <img src="./imgs/think (2).jpg" alt="Man wearing a black knitted hat"
                             class="rounded-lg shadow-md w-full h-auto">
                     </div>
                     <div class="p-2 sm:p-4">
-                        <img src="./imgs/p4.jpeg"
+                        <img src="./imgs/think.jpg"
                             alt="Woman wearing a green knitted hat in a snowy landscape" 
                             class="rounded-lg shadow-md w-full h-auto">
                     </div>
@@ -420,23 +311,11 @@
     </footer>
 
     <!-- Scripts -->
-    <script>
-        // Mobile menu toggle functionality
-        document.getElementById('mobile-menu-button').addEventListener('click', function() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        });
+    <script type="text/javascript" src="script.js" async defer></script> 
+    <!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TVV4FWR"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
-        // Close menu when clicking outside
-        document.addEventListener('click', function(event) {
-            const menu = document.getElementById('mobile-menu');
-            const button = document.getElementById('mobile-menu-button');
-            
-            if (!menu.contains(event.target) && !button.contains(event.target)) {
-                menu.classList.add('hidden');
-            }
-        });
-    </script>
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js-na1.hs-scripts.com/48967943.js"></script> -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
