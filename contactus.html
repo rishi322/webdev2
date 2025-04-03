@@ -269,13 +269,37 @@
                     <label class="block text-gray-700">Message</label>
                     <textarea name="message" rows="4" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"></textarea>
                 </div>
-                <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition">
+            
+                <button  class="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition" data-bs-toggle="modal" data-bs-target="#login"
+                data-bs-whatever="@mdo">
                     Send Message
                 </button>
             </form>
         </div>
     </div>
+    <div class="modal fade" id="login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Thank you so much</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="close-btn"></button>
+                </div>
+                <div class="modal-body">
+                    
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Message Sent Succesfully</label>
+                         
+                        </div>
+                       
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" > <a href="index.html">Home</a> </button>
+                    
 
+                </div>
+            </div>
+        </div>
+    </div>
     </header>
     
     <!-- Footer -->
