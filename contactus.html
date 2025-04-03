@@ -142,6 +142,23 @@
       display: flex;
       align-items: center;
  
+
+    }
+    .scroll-down-arrow {
+      font-size: 3rem;
+      color: white;
+      animation: bounce 1.5s infinite;
+      margin-top: 20px;
+    }
+
+    /* Keyframes for the bounce effect */
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(20px);
+      }
     }
     
     .logo-img {
@@ -152,15 +169,14 @@
     </style>
 </head>
 
-<body>
-    <header class="relative"  style="background-color:rgb(0, 0, 0)">
+<body >
+    <header class="relative"  style="background-image: url('./imgs/back-2.jpg');">
         <!-- Video background -->
-        <video class="absolute inset-0 w-full h-full object-cover opacity-40" playsinline autoplay muted loop>
-            <source src="./imgs/video.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+         
         
-        <div class="relative z-10">
+       
+        
+        <div class="relative z-10" style="background-color:rgba(0, 0, 0, 0.573)">
             <!-- Top contact bar - hidden on small screens -->
             <div class="hidden md:flex justify-between items-center p-4 bg-transparent">
                 <div class="flex items-center space-x-4">
@@ -226,152 +242,32 @@
             </div>
         </div>
         
-        <!-- Hero Content -->
-        <div class="relative z-10 flex flex-col items-start justify-center h-screen text-left px-4 sm:pl-16 hero-content" style="color:white;">
-            <h2 class="text-sm sm:text-lg font-semibold">BEST IN DESIGN</h2>
-            <h1 class="text-3xl sm:text-4xl md:text-6xl font-bold mb-2 md:mb-4 leading-tight" >CREATE & INSPIRE</h1>
-            <p class="text-base sm:text-xl mt-2 md:mt-4">Step into the world of fashion with us!</p>
-            <p class="text-sm sm:text-base md:text-lg mt-1 md:mt-2 max-w-full">
-                Unleash your creativity with unique designs, trendsetting styles, and timeless elegance.
-                From haute couture to ready-to-wear, redefine fashion with innovation and artistry.
-            </p>
-            <div class="mt-4 sm:mt-8 flex flex-col sm:flex-row gap-2 sm:gap-0 sm:space-x-4 w-full sm:w-auto">
-                <a class="bg-white text-gray-900 px-4 py-2 rounded hover:bg-gray-100 transition text-center sm:text-left" href="#">Discover</a>
-                <a class="border border-white text-white px-4 py-2 rounded hover:bg-white hover:text-gray-900 transition text-center sm:text-left" href="#">Know more</a>
-            </div>
+       
+   
+<div class="flex  justify-center py-5" >
+        <div class=" p-8 rounded-lg shadow-lg max-w-md w-full" style="background-color:rgba(243, 240, 240, 0.633)">
+            <h2 class="text-2xl font-bold text-gray-800 text-center mb-4">Contact Us</h2>
+            <form action="submit-form.php" method="POST">
+                <div class="mb-4">
+                    <label class="block text-gray-700">Name</label>
+                    <input type="text" name="name" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700">Email</label>
+                    <input type="email" name="email" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700">Message</label>
+                    <textarea name="message" rows="4" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition">
+                    Send Message
+                </button>
+            </form>
         </div>
+    </div>
+
     </header>
-    
-    <!-- Main Content -->
-    <div class="container mx-auto p-4 sm:p-6">
-        <h1 class="text-2xl sm:text-3xl font-bold mb-2 sm:mb-4">Discover the Artist behind the art</h1>
-        <p class="text-gray-700 mb-4 sm:mb-6 text-sm sm:text-base">
-            Angelina is an inspiring fashion designer whose passion for creativity and authenticity shines through in
-            every creation. A dedicated and honest individual, Angelina's deep connection with nature influences her
-            unique, vibrant, and adventurous designs.
-        </p>
-        <div class="flex flex-col md:flex-row">
-            <div class="md:w-2/3">
-                <div class="mb-4 sm:mb-6">
-                    <h2 class="text-xl sm:text-2xl font-bold mb-1 sm:mb-2">1</h2>
-                    <p class="text-gray-700 text-sm sm:text-base">
-                        From her earliest years, Angelina knew she was destined for fashion design. Her childhood was
-                        marked by an unmistakable passion for creativity, frequently expressed through imaginative
-                        sketches and experiments with fabrics. Angelina's early curiosity soon turned into a lifelong
-                        dedication, especially evident in her fascination with knitting and woolen clothing design.
-                    </p>
-                </div>
-                <div class="mb-4 sm:mb-6">
-                    <h2 class="text-xl sm:text-2xl font-bold mb-1 sm:mb-2">2</h2>
-                    <p class="text-gray-700 text-sm sm:text-base">
-                        Choosing to learn everything from scratch, Angelina embraced traditional techniques that she
-                        believes lend authenticity and depth to her collections. Her commitment to traditional
-                        craftsmanship not only preserves rich cultural heritage but also ensures each piece tells a
-                        meaningful story.
-                    </p>
-                </div>
-                <div class="mb-4 sm:mb-0">
-                    <h2 class="text-xl sm:text-2xl font-bold mb-1 sm:mb-2">3</h2>
-                    <p class="text-gray-700 text-sm sm:text-base">
-                        Angelina's adventurous spirit and colorful personality are reflected vividly in her collections,
-                        making her designs resonate deeply with those who value originality, craftsmanship, and an
-                        authentic connection to nature.
-                    </p>
-                </div>
-            </div>
-            <div class="md:w-1/3 flex justify-center items-center mt-4 md:mt-0">
-                <img src="./imgs/vector1.jpg"
-                    alt="Illustration of a woman knitting with a large ball of yarn and a heart symbol above her head"
-                    class="w-full max-w-xs h-auto" />
-            </div>
-        </div>
-    </div>
-
-    <!-- Collections Section -->
-    <div class="bg-blue-50 py-8 sm:py-12">
-        <div class="container mx-auto text-center px-4">
-            <h1 class="text-2xl sm:text-3xl font-bold mb-2 sm:mb-4">Explore most elegant Collections</h1>
-            <hr class="border-t-2 border-purple-600 w-24 mx-auto mb-4 sm:mb-8">
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 gallery-grid">
-                <div class="p-2 sm:p-4">
-                    <img src="./imgs/p2.jpeg" alt="Collection of knitted sweaters in various colors"
-                        class="rounded-lg shadow-md w-full h-auto">
-                </div>
-                <div class="p-2 sm:p-4">
-                    <img src="./imgs/p3.jpeg" alt="Man wearing a black knitted hat"
-                        class="rounded-lg shadow-md w-full h-auto">
-                </div>
-                <div class="p-2 sm:p-4">
-                    <img src="./imgs/p4.jpeg"
-                        alt="Woman wearing a green knitted hat in a snowy landscape" 
-                        class="rounded-lg shadow-md w-full h-auto">
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Fashion and Awards Section -->
-    <section class="relative w-full py-8 md:py-0 md:h-[80vh] bg-white flex flex-col md:flex-row items-center split-section">
-        <!-- Left Content Section -->
-        <div class="w-full md:w-1/2 p-4 md:p-12 lg:p-16">
-            <p class="text-black text-sm sm:text-lg mb-1 sm:mb-2">Our Fashion and awards</p>
-            <h1 class="text-xl sm:text-3xl md:text-5xl font-bold mb-2 sm:mb-4 leading-tight text-black">
-                Celebrate fashion and witness the elegance of global trends
-            </h1>
-            <p class="text-sm sm:text-lg md:text-xl mb-4 sm:mb-6 leading-relaxed text-black">
-                Stay ahead in the world of fashion with the latest events, runway shows, and award ceremonies.
-                Experience the creativity of top designers and the glamour of the industry's biggest celebrations.
-            </p>
-
-            <!-- Number Sections -->
-            <div class="flex flex-wrap justify-start gap-2 sm:gap-6 number-section">
-                <div class="bg-gray-100 text-black px-3 sm:px-6 py-2 sm:py-4 rounded-lg text-center w-28 sm:w-32 md:w-36 number-box">
-                    <p class="text-xl sm:text-3xl font-bold">5K+</p>
-                    <p class="text-black text-xs sm:text-sm">Fashion Designers</p>
-                </div>
-                <div class="bg-gray-100 text-black px-3 sm:px-6 py-2 sm:py-4 rounded-lg text-center w-28 sm:w-32 md:w-36 number-box">
-                    <p class="text-xl sm:text-3xl font-bold">200+</p>
-                    <p class="text-black text-xs sm:text-sm">Prestigious Awards</p>
-                </div>
-                <div class="bg-gray-100 text-black px-3 sm:px-6 py-2 sm:py-4 rounded-lg text-center w-28 sm:w-32 md:w-36 number-box">
-                    <p class="text-xl sm:text-3xl font-bold">100%</p>
-                    <p class="text-black text-xs sm:text-sm">Style & Elegance</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Right Image Section -->
-        <div class="w-full md:w-1/2 h-64 md:h-full mt-4 md:mt-0">
-            <img src="./imgs/aran 2.jpg" alt="A man and a woman in fashionable clothing standing on a rocky beach"
-                class="w-full h-full object-cover">
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section class="py-4">
-        <!-- Gallery content would go here -->
-        <div class="bg-blue-50 py-8 sm:py-12">
-            <div class="container mx-auto text-center px-4">
-                <h1 class="text-2xl sm:text-3xl font-bold mb-2 sm:mb-4">Gallery</h1>
-                <hr class="border-t-2 border-purple-600 w-24 mx-auto mb-4 sm:mb-8">
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 gallery-grid">
-                    <div class="p-2 sm:p-4">
-                        <img src="./imgs/p2.jpeg" alt="Collection of knitted sweaters in various colors"
-                            class="rounded-lg shadow-md w-full h-auto">
-                    </div>
-                    <div class="p-2 sm:p-4">
-                        <img src="./imgs/p3.jpeg" alt="Man wearing a black knitted hat"
-                            class="rounded-lg shadow-md w-full h-auto">
-                    </div>
-                    <div class="p-2 sm:p-4">
-                        <img src="./imgs/p4.jpeg"
-                            alt="Woman wearing a green knitted hat in a snowy landscape" 
-                            class="rounded-lg shadow-md w-full h-auto">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
     
     <!-- Footer -->
     <footer class="bg-blue-400 py-6 sm:py-8 px-4" style="color:white;">
