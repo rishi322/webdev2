@@ -20,6 +20,9 @@ header.relative {
   opacity:50%;
  
 }
+.y:hover{
+  border-bottom:1px solid white;
+}
 .bh:hover{
  color:black;
 }

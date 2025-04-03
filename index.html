@@ -11,25 +11,39 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-   
-  <!-- Tailwind CSS CDN -->
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-DQvkBjpPgn7RC31MCQoOeC9TI2kdqa4+BSgNMNj8v77fdC77Kj5zpWFTJaaAoMbC" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js" integrity="sha384-YUe2LzesAfftltw+PEaao2tjU/QATaW/rOitAq67e0CT0Zi2VVRL0oC4+gAaeBKu" crossorigin="anonymous"></script>
-    <link href="styles.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-DQvkBjpPgn7RC31MCQoOeC9TI2kdqa4+BSgNMNj8v77fdC77Kj5zpWFTJaaAoMbC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YUe2LzesAfftltw+PEaao2tjU/QATaW/rOitAq67e0CT0Zi2VVRL0oC4+gAaeBKu"
+        crossorigin="anonymous"></script>
+    <link href="styles.css" rel="stylesheet" />
 </head>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.min.js" integrity="sha384-Re460s1NeyAhufAM5JwfIGWosokaQ7CH15ti6W5Y4wC/m4eJ5opJ2ivohxVM05Wd" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.min.js"
+    integrity="sha384-Re460s1NeyAhufAM5JwfIGWosokaQ7CH15ti6W5Y4wC/m4eJ5opJ2ivohxVM05Wd"
+    crossorigin="anonymous"></script>
+
 <body>
-    <header class="relative"  style="background-color:rgb(0, 0, 0)">
+    <header class="relative" style="background-color:rgb(0, 0, 0)">
         <!-- Video background -->
         <video class="absolute inset-0 w-full h-full object-cover opacity-40" playsinline autoplay muted loop>
             <source src="./imgs/bg.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        
+        <div class="alert alert-primary" id="suc" role="alert" style="display:none; visibility:hidden;">
+            Succesful!
+        </div>
+        <div class="alert alert-danger" id="failed" role="alert" style="display:none; visibility:hidden;">
+            Failed!
+        </div>
+
         <div class="relative z-10">
             <!-- Top contact bar - hidden on small screens -->
             <div class="hidden md:flex justify-between items-center p-4 bg-transparent">
@@ -43,8 +57,11 @@
                     <span class="text-white">rishipatel1850@gmail.com</span>
                 </div>
                 <div class="flex items-center space-x-4">
-                    <a class="text-white" href="#">Login</a>
-                    <a class="text-white" href="#">Sign up</a>
+                    <a class="text-white" href="#"> <button type="button" class="text-white y" data-bs-toggle="modal"
+                            data-bs-target="#login" data-bs-whatever="@mdo">Login</button></a>
+                    <a class="text-white" href="#"> <button type="button" class="text-white y" data-bs-toggle="modal"
+                            data-bs-target="#signup" data-bs-whatever="@mdo">Sign Up</button></a>
+
                     <div class="relative">
                         <button class="text-white">English <i class="fas fa-chevron-down"></i></button>
                     </div>
@@ -53,74 +70,196 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Responsive Navbar -->
             <nav class="flex justify-between items-center p-4 bg-transparent" style="margin-top:-3rem;">
                 <div class="flex items-center space-x-2">
-                   
-                        <!-- Replace the src with the path to your logo image -->
-                        <img src="./imgs/logo4.png" alt="Athen Luxe Logo" class="logo-img">
-                   
+
+                    <!-- Replace the src with the path to your logo image -->
+                    <img src="./imgs/logo4.png" alt="Athen Luxe Logo" class="logo-img">
+
                 </div>
-                
+
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex items-center space-x-4">
-                    <a class="text-white hover:text-gray-300 transition" href="index.html"  style=" border-bottom:1px solid white;">Home</a>
-                    <a class="text-white hover:text-gray-300 transition" href="#about">About Me</a>
+                    <a class="text-white hover:text-gray-300 transition " style="text-decoration: none;" href="index.html"
+                        style=" border-bottom:1px solid white;">Home</a>
+                    <a class="text-white hover:text-gray-300 transition" href="#about" style="text-decoration: none;">About Me</a>
                     <div class="relative">
-                        <button class="text-white hover:text-gray-300 transition"> <a class="text-white hover:text-gray-300 transition" href="#collections">Collections</a> </button>
+                        <button class="text-white hover:text-gray-300 transition" > <a
+                                class="text-white hover:text-gray-300 transition" style="text-decoration: none;" href="#collections">Collections</a>
+                        </button>
                     </div>
-                    
-                    
-                    <a class="text-white hover:text-gray-300 transition" href="#event">Events & Awards</a>
-                    <a class="text-white hover:text-gray-300 transition" href="#gallery">Gallery</a>
-                    
-                    <a class="text-white hover:text-gray-300 transition" href="shop.html">Shop</a>
-                    <a class="text-white hover:text-gray-300 transition" href="contactus.html">Contact Us</a>
+
+
+                    <a class="text-white hover:text-gray-300 transition" href="#event" style="text-decoration: none;">Events & Awards</a>
+                    <a class="text-white hover:text-gray-300 transition" href="#gallery" style="text-decoration: none;">Gallery</a>
+
+                    <a class="text-white hover:text-gray-300 transition" href="shop.html" style="text-decoration: none;">Shop</a>
+                    <a class="text-white hover:text-gray-300 transition" href="contactus.html" style="text-decoration: none;">Contact Us</a>
                 </div>
-                
+
                 <!-- Mobile Menu Button -->
-                <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none" >
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h.01M12 12h.01M19 12h.01"></path>
+                <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M5 12h.01M12 12h.01M19 12h.01"></path>
                     </svg>
                 </button>
             </nav>
-            
+
             <!-- Mobile Menu (hidden by default) -->
             <div id="mobile-menu" class="hidden md:hidden bg-black bg-opacity-90 absolute w-full z-20">
                 <div class="px-4 py-2 space-y-2">
-                    <a class="block text-white py-2 hover:bg-gray-800 px-4 rounded" href="index.html"  style=" border-bottom:1px solid white;">Home</a>
-                    
+                    <a class="block text-white py-2 hover:bg-gray-800 px-4 rounded" href="index.html"
+                        style=" border-bottom:1px solid white;">Home</a>
+
                     <a class="block text-white py-2 hover:bg-gray-800 px-4 rounded" href="#about">About Me</a>
                     <a class="block text-white py-2 hover:bg-gray-800 px-4 rounded" href="#collections">Collections</a>
-                    
+
                     <a class="block text-white py-2 hover:bg-gray-800 px-4 rounded" href="#event">Events & Awards</a>
                     <a class="block text-white py-2 hover:bg-gray-800 px-4 rounded" href="#Gallery">Gallery</a>
-                    
+
                     <a class="block text-white py-2 hover:bg-gray-800 px-4 rounded" href="shop.html">Shop</a>
                     <a class="block text-white py-2 hover:bg-gray-800 px-4 rounded" href="contactus.html">Contact Us</a>
                 </div>
             </div>
         </div>
-        
+
+        <div class="modal fade" id="login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Login</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="close-btn"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="recipient-name" class="col-form-label">Email</label>
+                                <input type="text" class="form-control" id="recipient-name">
+                            </div>
+                            <div class="mb-3">
+                                <label for="recipient-name" class="col-form-label">Password</label>
+                                <input type="text" class="form-control" id="recipient-name">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="close-btn">Close</button>
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="login-btn">Log
+                            in</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       
+        <div class="modal fade" id="signup" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Sign Up</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="close-btn2"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="recipient-name" class="col-form-label">Email</label>
+                                <input type="text" class="form-control" id="recipient-name">
+                            </div>
+                            <div class="mb-3">
+                                <label for="recipient-name" class="col-form-label">Password</label>
+                                <input type="text" class="form-control" id="recipient-name">
+                            </div>
+                            <div class="mb-3">
+                                <label for="recipient-name" class="col-form-label">Reenter Your Password</label>
+                                <input type="text" class="form-control" id="recipient-name">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="close-btn3">Close</button>
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="sign-btn">Signup</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            document.getElementById("login-btn").addEventListener("click", function () {
+                let alertBox = document.getElementById("suc");
+                alertBox.style.visibility = "visible";
+                alertBox.style.display = "block"
+                // Hide the alert after 3 seconds
+                setTimeout(() => {
+                    alertBox.style.visibility = "hidden";
+                    alertBox.style.display = "none"
+                }, 3000);
+            });
+            document.getElementById("sign-btn").addEventListener("click", function () {
+                let alertBox = document.getElementById("suc");
+                alertBox.style.visibility = "visible";
+                alertBox.style.display = "block"
+                // Hide the alert after 3 seconds
+                setTimeout(() => {
+                    alertBox.style.visibility = "hidden";
+                    alertBox.style.display = "none"
+                }, 3000);
+            });
+            document.getElementById("close-btn").addEventListener("click", function () {
+                let alertBox = document.getElementById("failed");
+                alertBox.style.visibility = "visible";
+                alertBox.style.display = "block"
+                // Hide the alert after 3 seconds
+                setTimeout(() => {
+                    alertBox.style.visibility = "hidden";
+                    alertBox.style.display = "none"
+                }, 3000);
+            });
+            document.getElementById("close-btn2").addEventListener("click", function () {
+                let alertBox = document.getElementById("failed");
+                alertBox.style.visibility = "visible";
+                alertBox.style.display = "block"
+                // Hide the alert after 3 seconds
+                setTimeout(() => {
+                    alertBox.style.visibility = "hidden";
+                    alertBox.style.display = "none"
+                }, 3000);
+            });
+            document.getElementById("close-btn3").addEventListener("click", function () {
+                let alertBox = document.getElementById("failed");
+                alertBox.style.visibility = "visible";
+                alertBox.style.display = "block"
+                // Hide the alert after 3 seconds
+                setTimeout(() => {
+                    alertBox.style.visibility = "hidden";
+                    alertBox.style.display = "none"
+                }, 3000);
+            });
+            
+        </script>
         <!-- Hero Content -->
-        <div class="relative z-10 flex flex-col items-start justify-center h-screen text-left px-4 sm:pl-16 hero-content" style="color:white;">
+        <div class="relative z-10 flex flex-col items-start justify-center h-screen text-left px-4 sm:pl-16 hero-content"
+            style="color:white;">
             <h2 class="text-sm sm:text-lg font-semibold">BEST IN DESIGN</h2>
-            <h1 class="text-3xl sm:text-4xl md:text-6xl font-bold mb-2 md:mb-4 leading-tight" >CREATE & INSPIRE</h1>
+            <h1 class="text-3xl sm:text-4xl md:text-6xl font-bold mb-2 md:mb-4 leading-tight">CREATE & INSPIRE</h1>
             <p class="text-base sm:text-xl mt-2 md:mt-4">Step into the world of fashion with us!</p>
             <p class="text-sm sm:text-base md:text-lg mt-1 md:mt-2 max-w-full">
                 Unleash your creativity with unique designs, trendsetting styles, and timeless elegance.
                 From haute couture to ready-to-wear, redefine fashion with innovation and artistry.
             </p>
             <div class="mt-4 sm:mt-8 flex flex-col sm:flex-row gap-2 sm:gap-0 sm:space-x-4 w-full sm:w-auto">
-                <a class="bg-white text-gray-900 px-4 py-2 rounded hover:bg-gray-100 transition text-center sm:text-left" href="#about">Discover</a>
-                <a class="border border-white text-white px-4 py-2 rounded hover:bg-white hover:text-black-600 transition text-center sm:text-left" href="shop.html">Shop Now</a>
+                <a class="bg-white text-gray-900 px-4 py-2 rounded hover:bg-gray-100 transition text-center sm:text-left"
+                    href="#about">Discover</a>
+                <a class="border border-white text-white px-4 py-2 rounded hover:bg-white hover:text-black-600 transition text-center sm:text-left"
+                    href="shop.html">Shop Now</a>
             </div>
         </div>
     </header>
-    
-    
+
+
     <!-- Main Content -->
     <div class="container mx-auto p-4 sm:p-6" id="about">
         <h1 class="text-2xl sm:text-3xl font-bold mb-2 sm:mb-4">Discover the Artist behind the art</h1>
@@ -165,44 +304,55 @@
             </div>
         </div>
     </div>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+        data-bs-whatever="@mdo">Open modal for @mdo</button>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+        data-bs-whatever="@fat">Open modal for @fat</button>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+        data-bs-whatever="@getbootstrap">Open modal for @getbootstrap</button>
+
 
     <!-- Collections Section -->
     <div class="bg-blue-50 py-8 sm:py-12" id="collections">
         <div class="container mx-auto text-center px-4">
             <h1 class="text-2xl sm:text-3xl font-bold mb-2 sm:mb-4">Explore most elegant Collections</h1>
             <hr class="border-t-2 border-purple-600 w-24 mx-auto mb-4 sm:mb-8">
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 gallery-grid " >
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 gallery-grid ">
                 <div class="p-2 sm:p-4 " id="thover">
 
-                    
-                    <h2 class="absolute py-12 px-6 h2 flex flex-col items-start justify-center h-screen text-left px-4 sm:pl-16 hero-content" id="x" >Women</h2> 
+
+                    <h2 class="absolute py-12 px-6 h2 flex flex-col items-start justify-center h-screen text-left px-4 sm:pl-16 hero-content"
+                        id="x">Women</h2>
                     <img src="./imgs/p2.jpeg" class="phover" alt="Collection of knitted sweaters in various colors"
                         class="rounded-lg shadow-md w-full h-auto">
-                       
+
                 </div>
-                <div class="p-2 sm:p-4 phover" id="thover" >
-                    
-                    <h2 class="absolute py-12 px-6 h2 flex flex-col items-start justify-center h-screen text-left px-4 sm:pl-16 hero-content" id="x" >Kids</h2> 
-                   
-                    <img src="./imgs/p3.jpeg"  alt="Man wearing a black knitted hat"
+                <div class="p-2 sm:p-4 phover" id="thover">
+
+                    <h2 class="absolute py-12 px-6 h2 flex flex-col items-start justify-center h-screen text-left px-4 sm:pl-16 hero-content"
+                        id="x">Kids</h2>
+
+                    <img src="./imgs/p3.jpeg" alt="Man wearing a black knitted hat"
                         class="rounded-lg shadow-md w-full h-auto">
-                  
+
                 </div>
                 <div class="p-2 sm:p-4" id="thover">
-                    
-                    <h2 class="absolute py-12 px-6 h2 flex flex-col items-start justify-center h-screen text-left px-4 sm:pl-16 hero-content" id="x" >Men</h2> 
-                   
-                    <img src="./imgs/p6.jpg" class="phover"
-                        alt="Woman wearing a green knitted hat in a snowy landscape" 
+
+                    <h2 class="absolute py-12 px-6 h2 flex flex-col items-start justify-center h-screen text-left px-4 sm:pl-16 hero-content"
+                        id="x">Men</h2>
+
+                    <img src="./imgs/p6.jpg" class="phover" alt="Woman wearing a green knitted hat in a snowy landscape"
                         class="rounded-lg shadow-md w-full h-auto">
-                        
+
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Fashion and Awards Section -->
-    <section class="relative w-full py-8 md:py-0 md:h-[80vh] bg-white flex flex-col md:flex-row items-center split-section" id="event">
+    <section
+        class="relative w-full py-8 md:py-0 md:h-[80vh] bg-white flex flex-col md:flex-row items-center split-section"
+        id="event">
         <!-- Left Content Section -->
         <div class="w-full md:w-1/2 p-4 md:p-12 lg:p-16">
             <p class="text-black text-sm sm:text-lg mb-1 sm:mb-2">Our Fashion and awards</p>
@@ -216,15 +366,18 @@
 
             <!-- Number Sections -->
             <div class="flex flex-wrap justify-start gap-2 sm:gap-6 number-section">
-                <div class="bg-gray-100 text-black px-3 sm:px-6 py-2 sm:py-4 rounded-lg text-center w-28 sm:w-32 md:w-36 number-box">
+                <div
+                    class="bg-gray-100 text-black px-3 sm:px-6 py-2 sm:py-4 rounded-lg text-center w-28 sm:w-32 md:w-36 number-box">
                     <p class="text-xl sm:text-3xl font-bold">5K+</p>
                     <p class="text-black text-xs sm:text-sm">Fashion Designers</p>
                 </div>
-                <div class="bg-gray-100 text-black px-3 sm:px-6 py-2 sm:py-4 rounded-lg text-center w-28 sm:w-32 md:w-36 number-box">
+                <div
+                    class="bg-gray-100 text-black px-3 sm:px-6 py-2 sm:py-4 rounded-lg text-center w-28 sm:w-32 md:w-36 number-box">
                     <p class="text-xl sm:text-3xl font-bold">200+</p>
                     <p class="text-black text-xs sm:text-sm">Prestigious Awards</p>
                 </div>
-                <div class="bg-gray-100 text-black px-3 sm:px-6 py-2 sm:py-4 rounded-lg text-center w-28 sm:w-32 md:w-36 number-box">
+                <div
+                    class="bg-gray-100 text-black px-3 sm:px-6 py-2 sm:py-4 rounded-lg text-center w-28 sm:w-32 md:w-36 number-box">
                     <p class="text-xl sm:text-3xl font-bold">100%</p>
                     <p class="text-black text-xs sm:text-sm">Style & Elegance</p>
                 </div>
@@ -255,15 +408,14 @@
                             class="rounded-lg shadow-md w-full h-auto">
                     </div>
                     <div class="p-2 sm:p-4">
-                        <img src="./imgs/think.jpg"
-                            alt="Woman wearing a green knitted hat in a snowy landscape" 
+                        <img src="./imgs/think.jpg" alt="Woman wearing a green knitted hat in a snowy landscape"
                             class="rounded-lg shadow-md w-full h-auto">
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    
+
     <!-- Footer -->
     <footer class="bg-blue-400 py-6 sm:py-8 px-4" style="color:white;">
         <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
@@ -311,7 +463,7 @@
     </footer>
 
     <!-- Scripts -->
-    <script type="text/javascript" src="script.js" async defer></script> 
+    <script type="text/javascript" src="script.js" async defer></script>
     <!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TVV4FWR"
         height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
