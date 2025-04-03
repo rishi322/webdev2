@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irish Woolen Designer</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+        }
+
+        section {
+            padding: 40px;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #222;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .cta-button {
+            padding: 10px 20px;
+            background-color: #555;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .about-img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            margin-top: 20px;
+        }
+    </style>
+
+    <style>
+        /* Main section with background */
+
+
+        .designer-section {
+            width: 100%;
+            min-height: 100vh;
+            background: url('../demo/imgs/back-2.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px;
+            position: relative;
+        }
+
+        /* Content Container */
+        .content-container {
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            max-width: 800px;
+        }
+
+        /* Button Styling */
+        .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background-color: rgba(255, 255, 255, 1);
+        }
+
+        /* Responsive Read More */
+        @media (max-width: 768px) {
+            .animated-text {
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            #read-more-btn {
+                display: block;
+                margin: 10px auto;
+            }
+        }
+
+        /* Content container */
+        .content-container {
+            background: rgba(0, 0, 0, 0.6);
+            /* Dark overlay for better readability */
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            max-width: 800px;
+        }
+
+        /* Text styles */
+        .animated-title {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .animated-text {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        /* Button styles */
+        .cta-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: rgba(255, 255, 255, 1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .content-container {
+                padding: 20px;
+            }
+
+            .animated-title {
+                font-size: 2em;
+            }
+
+            .animated-text {
+                font-size: 1em;
+            }
+
+            .cta-button {
+                padding: 10px 20px;
+                font-size: 1em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .animated-title {
+                font-size: 1.8em;
+            }
+
+            .animated-text {
+                font-size: 0.9em;
+            }
+
+            .cta-button {
+                padding: 8px 16px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+
+    <style>
+        .designer-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            /* Overlay to improve text readability */
+        }
+
+        .designer-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .animated-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            color: #edf3f9;
+            margin-bottom: 30px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s, transform 1s;
+        }
+
+        .designer-section.visible .animated-title {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .animated-text {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #eeefef;
+            margin-bottom: 30px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s 0.5s, transform 1s 0.5s;
+        }
+
+        .designer-section.visible .animated-text {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .about-img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #3498db;
+            margin-bottom: 30px;
+            opacity: 0;
+            transform: scale(0.7);
+            transition: opacity 1s 0.7s, transform 1s 0.7s;
+        }
+
+        .designer-section.visible .about-img {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s 0.9s, transform 1s 0.9s;
+        }
+
+        .designer-section.visible .cta-button {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .cta-button:hover {
+            background-color: #2980b9;
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (min-width: 992px) {
+            #intro {
+                margin-top: -58.59px;
+            }
+        }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+</head>
+
+<body font="font-roboto">
+
+    <!-- Navbar -->
+    <!-- <nav class="bg-blue-600 sticky-top text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold">ATHEN LUXE</div>
+            <ul class="flex space-x-6">
+                <li><a href="#" class="hover:underline">Home</a></li>
+                <li><a href="#" class="hover:underline">Collections <i class="fas fa-chevron-down"></i></a></li>
+                <li><a href="#" class="hover:underline">Shop</a></li>
+                <li><a href="#" class="hover:underline">Events & Awards</a></li>
+                <li><a href="#" class="hover:underline">News</a></li>
+                <li><a href="#" class="hover:underline">About Us</a></li>
+            </ul>
+        </div>
+    </nav> -->
+
+    <!-- <video style="min-width: 100%; min-height: 100%;" playsinline autoplay muted loop>
+        <source src="./imgs/video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+        <div class="relative z-10 flex flex-col items-start justify-center h-screen text-left pl-16">
+            <h2 class="text-lg font-semibold">BEST FASHION</h2>
+            <h1 class="text-6xl font-bold">EXPLORE</h1>
+            <p class="text-xl mt-4">The world of fabrics with us!</p>
+            <p class="text-lg mt-2">Find awesome designs, fabrics, accessories, and packages</p>
+            <div class="mt-8 space-x-4">
+                <a class="bg-white text-gray-900 px-4 py-2 rounded" href="#">Discover</a>
+                <a class="border border-white text-white px-4 py-2 rounded" href="#">Know more</a>
+            </div>
+        </div>
+    </video> -->
+    <header class="relative">
+        <video alt="Close-up of hands knitting with green yarn" class="absolute inset-0 w-full h-full object-cover opacity-50" height="1080" src="./imgs/video.mp4" playsinline autoplay muted loop width="1920"></video>
+        <div class="relative z-10">
+            <div class="flex justify-between items-center p-4 bg-transparent">
+                <div class="flex items-center space-x-4">
+                    <a class="text-white" href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a class="text-white" href="#"><i class="fab fa-twitter"></i></a>
+                    <a class="text-white" href="#"><i class="fab fa-instagram"></i></a>
+                    <span class="text-white">|</span>
+                    <span class="text-white">0894342831</span>
+                    <span class="text-white">|</span>
+                    <span class="text-white">rishipatel1850@gmail.com</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a class="text-white" href="#">Login</a>
+                    <a class="text-white" href="#">Sign up</a>
+                    <div class="relative">
+                        <button class="text-white">English <i class="fas fa-chevron-down"></i></button>
+                        <!-- Dropdown content can be added here -->
+                    </div>
+                    <div class="relative">
+                        <button class="text-white">USD <i class="fas fa-chevron-down"></i></button>
+                        <!-- Dropdown content can be added here -->
+                    </div>
+                </div>
+            </div>
+            <nav class="flex justify-between items-center p-4 bg-transparent">
+                <div class="flex items-center space-x-4">
+                    <img alt="Athen Luxe Logo" class="h-8" height="50" src="./imgs/logo.png"/>
+                    <span class="text-white text-xl font-bold">ATHEN LUXE</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a class="text-white" href="#">Home</a>
+                    <div class="relative">
+                        <button class="text-white">Collections <i class="fas fa-chevron-down"></i></button>
+                        <!-- Dropdown content can be added here -->
+                    </div>
+                    <a class="text-white" href="#">Shop</a>
+                    <a class="text-white" href="#">Events & Awards</a>
+                    <a class="text-white" href="#">News</a>
+                    <a class="text-white" href="#">About Us</a>
+                </div>
+            </nav>
+        </div>
+        <div class="relative z-10 flex flex-col items-start justify-center h-screen text-left pl-16">
+            <h2 class="text-lg font-semibold">BEST FASHION</h2>
+            <h1 class="text-6xl font-bold">EXPLORE</h1>
+            <p class="text-xl mt-4">The world of fabrics with us!</p>
+            <p class="text-lg mt-2">Find awesome designs, fabrics, accessories, and packages</p>
+            <div class="mt-8 space-x-4">
+                <a class="bg-white text-gray-900 px-4 py-2 rounded" href="#">Discover</a>
+                <a class="border border-white text-white px-4 py-2 rounded" href="#">Know more</a>
+            </div>
+        </div>
+    </header>
+
+
+    </div>
+    <!-- Main Content -->
+    <div class="container mx-auto p-6">
+        <h1 class="text-3xl font-bold mb-4">Discover the Artist behind the art</h1>
+        <p class="text-gray-700 mb-6">
+            Angelina is an inspiring fashion designer whose passion for creativity and authenticity shines through in
+            every creation. A dedicated and honest individual, Angelina's deep connection with nature influences her
+            unique, vibrant, and adventurous designs.
+        </p>
+        <div class="flex flex-col md:flex-row">
+            <div class="md:w-2/3">
+                <div class="mb-6">
+                    <h2 class="text-2xl font-bold mb-2">1</h2>
+                    <p class="text-gray-700">
+                        From her earliest years, Angelina knew she was destined for fashion design. Her childhood was
+                        marked by an unmistakable passion for creativity, frequently expressed through imaginative
+                        sketches and experiments with fabrics. Angelina’s early curiosity soon turned into a lifelong
+                        dedication, especially evident in her fascination with knitting and woolen clothing design.
+                    </p>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-bold mb-2">2</h2>
+                    <p class="text-gray-700">
+                        Choosing to learn everything from scratch, Angelina embraced traditional techniques that she
+                        believes lend authenticity and depth to her collections. Her commitment to traditional
+                        craftsmanship not only preserves rich cultural heritage but also ensures each piece tells a
+                        meaningful story.
+                    </p>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-bold mb-2">3</h2>
+                    <p class="text-gray-700">
+                        Angelina’s adventurous spirit and colorful personality are reflected vividly in her collections,
+                        making her designs resonate deeply with those who value originality, craftsmanship, and an
+                        authentic connection to nature..
+
+                    </p>
+                </div>
+            </div>
+            <div class="md:w-1/3 flex justify-center items-center">
+                <img src="../imgs/vector1.jpg"
+                    alt="Illustration of a woman knitting with a large ball of yarn and a heart symbol above her head"
+                    class="w-full h-auto" />
+            </div>
+        </div>
+    </div>
+
+
+
+    <section class="">
+
+        <!-- Main Content -->
+        <div class="bg-gray-100 py-12">
+            <div class="container mx-auto text-center">
+                <h1 class="text-3xl font-bold mb-4">Explore most elegant Collections</h1>
+                <hr class="border-t-2 border-purple-600 w-24 mx-auto mb-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="p-4">
+                        <img src="https://placehold.co/300x300" alt="Collection of knitted sweaters in various colors"
+                            class="rounded-lg shadow-md">
+                    </div>
+                    <div class="p-4">
+                        <img src="https://placehold.co/300x300" alt="Man wearing a black knitted hat"
+                            class="rounded-lg shadow-md">
+                    </div>
+                    <div class="p-4">
+                        <img src="https://placehold.co/300x300"
+                            alt="Woman wearing a green knitted hat in a snowy landscape" class="rounded-lg shadow-md">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <section class="relative w-full h-[55vh] md:h-[80vh] bg-white flex items-center">
+        <!-- Left Content Section -->
+        <div class="w-1/2 p-6 md:p-12 lg:p-16">
+            <p class="text-black text-lg mb-2">Our Fashion and awards</p>
+            <h1 class="text-3xl md:text-5xl font-bold mb-4 leading-tight text-black">
+                Celebrate fashion and witness the elegance of global trends
+            </h1>
+            <p class="text-lg md:text-xl mb-6 leading-relaxed text-black">
+                Stay ahead in the world of fashion with the latest events, runway shows, and award ceremonies.
+                Experience the creativity of top designers and the glamour of the industry's biggest celebrations.
+            </p>
+
+            <!-- Centered Number Sections -->
+            <div class="flex justify-start gap-6">
+                <div class="bg-gray-100 text-black px-6 py-4 rounded-lg text-center w-32 md:w-36">
+                    <p class="text-3xl font-bold">5K+</p>
+                    <p class="text-black text-sm">Fashion Designers</p>
+                </div>
+                <div class="bg-gray-100 text-black px-6 py-4 rounded-lg text-center w-32 md:w-36">
+                    <p class="text-3xl font-bold">200+</p>
+                    <p class="text-black text-sm">Prestigious Awards</p>
+                </div>
+                <div class="bg-gray-100 text-black px-6 py-4 rounded-lg text-center w-32 md:w-36">
+                    <p class="text-3xl font-bold">100%</p>
+                    <p class="text-black text-sm">Style & Elegance</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Image Section -->
+        <div class="w-1/2 h-full">
+            <img src="./imgs/aran 2.jpg" alt="A man and a woman in fashionable clothing standing on a rocky beach"
+                class="w-full h-full object-cover">
+        </div>
+    </section>
+
+
+
+    <section>
+        <h2>Gallery</h2>
+
+
+    </section>
+    <footer class="bg-blue-600 py-8 px-4">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <h2 class="font-bold mb-4">Need any help?</h2>
+                <p>Call 24/7 for any help</p>
+                <p class="text-white-600 text-lg font-bold mb-4">+353 894342831</p>
+                <p>Mail to our support team</p>
+                <p class="text-white-600 text-lg font-bold mb-4">rishipatel1850@gmail.com</p>
+                <p>Follow us on</p>
+                <div class="flex space-x-4 mt-2">
+                    <a href="#" class="text-white-600"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-white-600"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-white-600"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-white-600"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div>
+                <h2 class="font-bold mb-4">Company</h2>
+                <ul>
+                    <li class="mb-2"><a href="#" class="hover:underline">About Us</a></li>
+                    <li class="mb-2"><a href="#" class="hover:underline">Testimonials</a></li>
+                    <li class="mb-2"><a href="#" class="hover:underline">Work with Us</a></li>
+                    <li class="mb-2"><a href="#" class="hover:underline">Meet the Team</a></li>
+                    <li class="mb-2"><a href="#" class="hover:underline">Blog</a></li>
+                </ul>
+            </div>
+            <div>
+                <h2 class="font-bold mb-4">Support</h2>
+                <ul>
+                    <li class="mb-2"><a href="#" class="hover:underline">Account</a></li>
+                    <li class="mb-2"><a href="#" class="hover:underline">Faq</a></li>
+                    <li class="mb-2"><a href="#" class="hover:underline">Contact</a></li>
+                    <li class="mb-2"><a href="#" class="hover:underline">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h2 class="font-bold mb-4">Other Services</h2>
+                <ul>
+                    <li class="mb-2"><a href="#" class="hover:underline">Fashion Events</a></li>
+                    <li class="mb-2"><a href="#" class="hover:underline">Partners</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+    <script>
+        // Intersection Observer to trigger animations on scroll
+        const section = document.querySelector('.designer-section');
+
+        const observerOptions = {
+            root: null, // viewport
+            threshold: 0.1 // trigger when 10% of the section is visible
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    // Disconnect after animation to prevent re-triggering
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Start observing the section
+        observer.observe(section);
+
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
+        integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
