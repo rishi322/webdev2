@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irish Woolen Designer</title>
+
+    <!-- External CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        /* Base styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            min-width: 280px;
+        }
+
+        /* Header and video styles */
+        header.relative {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        video.absolute {
+            position: absolute;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+        }
+
+        /* Mobile menu styles */
+        #mobile-menu {
+            backdrop-filter: blur(5px);
+        }
+
+        /* Extremely small device fixes */
+        @media (max-width: 320px) {
+            .text-6xl {
+                font-size: 1.75rem !important;
+            }
+
+            .text-xl {
+                font-size: 0.875rem !important;
+            }
+
+            .text-lg {
+                font-size: 0.75rem !important;
+            }
+
+            .mt-8.space-x-4 > a {
+                display: block;
+                margin: 0.5rem 0 !important;
+                text-align: center;
+                max-width: 90%;
+            }
+
+            .hero-content {
+                padding-left: 0.5rem !important;
+                padding-right: 0.5rem !important;
+            }
+
+            .number-section {
+                flex-direction: column !important;
+                gap: 0.5rem !important;
+            }
+
+            .number-box {
+                width: 100% !important;
+                margin-bottom: 0.5rem;
+            }
+
+            nav .logo-text {
+                font-size: 1rem !important;
+            }
+
+            .split-section {
+                flex-direction: column !important;
+            }
+
+            .split-section > div {
+                width: 100% !important;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
+
+        /* Small device fixes */
+        @media (max-width: 480px) {
+            h1.text-6xl {
+                font-size: 2rem;
+            }
+
+            p.text-xl, p.text-lg {
+                font-size: 0.875rem;
+            }
+
+            .hero-content {
+                padding-left: 1rem !important;
+            }
+
+            .mt-8.space-x-4 {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+
+            .mt-8.space-x-4 > a {
+                margin: 0.25rem 0;
+            }
+
+            .split-section {
+                flex-direction: column;
+            }
+
+            .split-section > div {
+                width: 100%;
+            }
+
+            .hidden-xs {
+                display: none !important;
+            }
+        }
+        .logo-container {
+      display: flex;
+      align-items: center;
+ 
+
+    }
+    .scroll-down-arrow {
+      font-size: 3rem;
+      color: white;
+      animation: bounce 1.5s infinite;
+      margin-top: 20px;
+    }
+
+    /* Keyframes for the bounce effect */
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(20px);
+      }
+    }
+    
+    .logo-img {
+      height: 100px; /* Adjust this value to make your logo bigger or smaller */
+      width: auto;
+      max-width: 300px; /* Prevents logo from getting too wide */
+    }
+    </style>
+    
+    <link rel="icon" sizes="192x192" type="image/png" href="./imgs/logob.png">
+</head>
+
+<body >
+    <header class="relative"  style="background-image: url('./imgs/back-2.jpg');">
+        <!-- Video background -->
+         
+        
+       
+        
+       
+        <div class="relative z-10">
+            <!-- Top contact bar - hidden on small screens -->
+            <div class="hidden md:flex justify-between items-center p-4 bg-black">
+                <div class="flex items-center space-x-4">
+                    <a class="text-white" href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a class="text-white" href="#"><i class="fab fa-twitter"></i></a>
+                    <a class="text-white" href="#"><i class="fab fa-instagram"></i></a>
+                    <span class="text-white">|</span>
+                    <span class="text-white">0894342831</span>
+                    <span class="text-white">|</span>
+                    <span class="text-white">rishipatel1850@gmail.com</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a class="text-white" href="#">Login</a>
+                    <a class="text-white" href="#">Sign up</a>
+                    <div class="relative">
+                        <button class="text-white">English <i class="fas fa-chevron-down"></i></button>
+                    </div>
+                    <div class="relative">
+                        <button class="text-white">USD <i class="fas fa-chevron-down"></i></button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Responsive Navbar -->
+            <nav class="flex justify-between items-center p-4 bg-black" style="margin-top:-3rem;">
+                <div class="flex items-center space-x-2">
+                   
+                        <!-- Replace the src with the path to your logo image -->
+                        <img src="./imgs/logo4.png" alt="Athen Luxe Logo" class="logo-img">
+                   
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a class="text-white hover:text-gray-300 transition" href="index.html">Home</a>
+                    <a class="text-white hover:text-gray-300 transition" href="index.html#about">About Me</a>
+                    <div class="relative">
+                        <button class="text-white hover:text-gray-300 transition"> <a class="text-white hover:text-gray-300 transition" href="index.html#collections">Collections</a> </button>
+                    </div>
+                    
+                    
+                    <a class="text-white hover:text-gray-300 transition" href="index.html#event">Events & Awards</a>
+                    <a class="text-white hover:text-gray-300 transition" href="index.html#gallery">Gallery</a>
+                    
+                    <a class="text-white hover:text-gray-300 transition" href="shop.html">Shop</a>
+                    <a class="text-white hover:text-gray-300 transition" href="contactus.html" style=" border-bottom:1px solid white;">Contact Us</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none" >
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h.01M12 12h.01M19 12h.01"></path>
+                    </svg>
+                </button>
+            </nav>
+            
+            <!-- Mobile Menu (hidden by default) -->
+            <div id="mobile-menu" class="hidden md:hidden bg-black bg-opacity-90 absolute w-full z-20">
+                <div class="px-4 py-2 space-y-2">
+                    <a class="block text-white py-2 hover:bg-gray-800 px-4 rounded" href="index.html">Home</a>
+                    
+                    <a class="block text-white py-2 hover:bg-gray-800 px-4 rounded" href="index.html#about">About Me</a>
+                    <a class="block text-white py-2 hover:bg-gray-800 px-4 rounded" href="index.html#collections">Collections</a>
+                    
+                    <a class="block text-white py-2 hover:bg-gray-800 px-4 rounded" href="#event">Events & Awards</a>
+                    <a class="block text-white py-2 hover:bg-gray-800 px-4 rounded" href="index.html#gallery">Gallery</a>
+                    
+                    <a class="block text-white py-2 hover:bg-gray-800 px-4 rounded" href="shop.html">Shop</a>
+                    <a class="block text-white py-2 hover:bg-gray-800 px-4 rounded" href="contactus.html"  style=" border-bottom:1px solid white;">Contact Us</a>
+                </div>
+            </div>
+        </div>
+        
+       
+   
+<div class="flex  justify-center py-5" >
+        <div class=" p-8 rounded-lg shadow-lg max-w-md w-full" style="background-color:rgba(243, 240, 240, 0.633)">
+            <h2 class="text-2xl font-bold text-gray-800 text-center mb-4">Contact Us</h2>
+            <form action="submit-form.php" method="POST">
+                <div class="mb-4">
+                    <label class="block text-gray-700">Name</label>
+                    <input type="text" name="name" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700">Email</label>
+                    <input type="email" name="email" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700">Message</label>
+                    <textarea name="message" rows="4" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"></textarea>
+                </div>
+            
+                <button  class="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition" data-bs-toggle="modal" data-bs-target="#login"
+                data-bs-whatever="@mdo">
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </div>
+    <div class="modal fade" id="login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Thank you so much</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="close-btn"></button>
+                </div>
+                <div class="modal-body">
+                    
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Message Sent Succesfully</label>
+                         
+                        </div>
+                       
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" > <a href="index.html">Home</a> </button>
+                    
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </header>
+    
+    <!-- Footer -->
+    <footer class="bg-blue-400 py-6 sm:py-8 px-4" style="color:white;">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
+            <div class="mb-4 sm:mb-0">
+                <h2 class="font-bold mb-2 sm:mb-4 text-base sm:text-lg">Need any help?</h2>
+                <p class="text-sm">Call 24/7 for any help</p>
+                <p class="text-white-600 text-base sm:text-lg font-bold mb-2 sm:mb-4">+353 894342831</p>
+                <p class="text-sm">Mail to our support team</p>
+                <p class="text-white-600 text-base sm:text-lg font-bold mb-2 sm:mb-4">rishipatel1850@gmail.com</p>
+                <p class="text-sm">Follow us on</p>
+                <div class="flex space-x-4 mt-2">
+                    <a href="#" class="text-white-600"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-white-600"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-white-600"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-white-600"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="mb-4 sm:mb-0">
+                <h2 class="font-bold mb-2 sm:mb-4 text-base sm:text-lg">Company</h2>
+                <ul class="text-sm">
+                    <li class="mb-1 sm:mb-2"><a href="#" class="hover:underline">About Us</a></li>
+                    <li class="mb-1 sm:mb-2"><a href="#" class="hover:underline">Testimonials</a></li>
+                    <li class="mb-1 sm:mb-2"><a href="#" class="hover:underline">Work with Us</a></li>
+                    <li class="mb-1 sm:mb-2"><a href="#" class="hover:underline">Meet the Team</a></li>
+                    <li class="mb-1 sm:mb-2"><a href="#" class="hover:underline">Blog</a></li>
+                </ul>
+            </div>
+            <div class="mb-4 sm:mb-0">
+                <h2 class="font-bold mb-2 sm:mb-4 text-base sm:text-lg">Support</h2>
+                <ul class="text-sm">
+                    <li class="mb-1 sm:mb-2"><a href="#" class="hover:underline">Account</a></li>
+                    <li class="mb-1 sm:mb-2"><a href="#" class="hover:underline">Faq</a></li>
+                    <li class="mb-1 sm:mb-2"><a href="#" class="hover:underline">Contact</a></li>
+                    <li class="mb-1 sm:mb-2"><a href="#" class="hover:underline">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h2 class="font-bold mb-2 sm:mb-4 text-base sm:text-lg">Other Services</h2>
+                <ul class="text-sm">
+                    <li class="mb-1 sm:mb-2"><a href="#" class="hover:underline">Fashion Events</a></li>
+                    <li class="mb-1 sm:mb-2"><a href="#" class="hover:underline">Partners</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile menu toggle functionality
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const menu = document.getElementById('mobile-menu');
+            const button = document.getElementById('mobile-menu-button');
+            
+            if (!menu.contains(event.target) && !button.contains(event.target)) {
+                menu.classList.add('hidden');
+            }
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

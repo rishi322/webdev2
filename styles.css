@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @font-face {
     font-family: 'Moririse2';
     font-display: swap;
@@ -1003,3 +1004,163 @@
     user-select: none;
     margin-bottom: 0;
 }
+=======
+
+/* Base styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    min-width: 280px;
+}
+
+/* Header and video styles */
+header.relative {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+.phover:hover {
+  background-color:black;
+  opacity:50%;
+ 
+}
+.y:hover{
+  border-bottom:1px solid white;
+}
+.bh:hover{
+ color:black;
+}
+#x{
+  display:none;
+  color:rgb(15, 14, 15);
+}
+
+#thover:hover #x{
+  display:flex;
+  margin-left:5rem;
+  font-weight:700;
+}
+
+
+video.absolute {
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+/* Mobile menu styles */
+#mobile-menu {
+    backdrop-filter: blur(5px);
+}
+
+/* Extremely small device fixes */
+@media (max-width: 320px) {
+    .text-6xl {
+        font-size: 1.75rem !important;
+    }
+
+    .text-xl {
+        font-size: 0.875rem !important;
+    }
+
+    .text-lg {
+        font-size: 0.75rem !important;
+    }
+
+    .mt-8.space-x-4 > a {
+        display: block;
+        margin: 0.5rem 0 !important;
+        text-align: center;
+        max-width: 90%;
+    }
+
+    .hero-content {
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
+    }
+
+    .number-section {
+        flex-direction: column !important;
+        gap: 0.5rem !important;
+    }
+
+    .number-box {
+        width: 100% !important;
+        margin-bottom: 0.5rem;
+    }
+
+    nav .logo-text {
+        font-size: 1rem !important;
+    }
+
+    .split-section {
+        flex-direction: column !important;
+    }
+
+    .split-section > div {
+        width: 100% !important;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* Small device fixes */
+@media (max-width: 480px) {
+    h1.text-6xl {
+        font-size: 2rem;
+    }
+
+    p.text-xl, p.text-lg {
+        font-size: 0.875rem;
+    }
+
+    .hero-content {
+        padding-left: 1rem !important;
+    }
+
+    .mt-8.space-x-4 {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .mt-8.space-x-4 > a {
+        margin: 0.25rem 0;
+    }
+
+    .split-section {
+        flex-direction: column;
+    }
+
+    .split-section > div {
+        width: 100%;
+    }
+
+    .hidden-xs {
+        display: none !important;
+    }
+}
+.logo-container {
+display: flex;
+align-items: center;
+
+}
+
+.logo-img {
+height: 100px; /* Adjust this value to make your logo bigger or smaller */
+width: auto;
+max-width: 300px; /* Prevents logo from getting too wide */
+}
+>>>>>>> d6256a84050e0fad750067f907043ddfe9851588
